@@ -7,7 +7,7 @@ storing subsets of the total list in individual JSON files.
 Documentation available at https://pokeapi.co/docs/v2.html
 """
 
-import requests
+import httpx
 from print_response import print_response
 
 
@@ -19,7 +19,7 @@ def main():
     # Grab the first 200 and seed the iteration process
     count = 1
     headers = {"Accept": "application/json"}
-    resp = requests.get(
+    resp = httpx.get(
         "https://pokeapi.co/api/v2/pokemon",
         params={"limit": 200},
         headers=headers,
@@ -36,7 +36,7 @@ def main():
     # the next URL, along with "offset" to identify the starting point
     data = resp.json()
     while data["next"]:
-        resp = requests.get(data["next"], headers=headers)
+        resp = httpx.get(data["next"], headers=headers)
         resp.raise_for_status()
         count += 1
         print_response(resp, filename=f"get_all_pokemon_{count}")

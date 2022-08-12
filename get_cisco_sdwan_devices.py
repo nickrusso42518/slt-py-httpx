@@ -31,7 +31,7 @@ def main():
         #auth = sess.post(f"{api_path}/j_security_check", data=creds, verify=False)
 
         # Optional debugging statement
-        # breakpoint()  # py3.7+
+        breakpoint()  # py3.7+
         # import pdb; pdb.set_trace()  # py3.6-
     
         # An authentication request has failed if we receive a failing return
