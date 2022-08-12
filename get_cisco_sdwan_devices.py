@@ -19,7 +19,6 @@ def main():
     api_path = "https://sandbox-sdwan-1.cisco.com"
     # requests.packages.urllib3.disable_warnings()
 
-
     # These credentials are supplied by Cisco DevNet on the sandbox page:
     # https://developer.cisco.com/sdwan/learn/
     creds = {"j_username": "devnetuser", "j_password": "RG!_Yw919_83"}
@@ -28,19 +27,23 @@ def main():
     # into key/value pairs. Also, disable SSL validation
     with httpx.Client(verify=False) as client:
         auth_resp = client.post(f"{api_path}/j_security_check", data=creds)
-        #auth = sess.post(f"{api_path}/j_security_check", data=creds, verify=False)
+        # auth = sess.post(f"{api_path}/j_security_check", data=creds, verify=False)
 
         # Optional debugging statement
-        breakpoint()  # py3.7+
+        # breakpoint()  # py3.7+
         # import pdb; pdb.set_trace()  # py3.6-
-    
+
         # An authentication request has failed if we receive a failing return
         # code OR if there is any text supplied in the response. Failing auth
         # often return code 200 (OK) but includes any HTML content, indicating
         # a failure. If a failure does occur, exit the program using code 1.
         if auth_resp.is_error or auth_resp.text:
-            raise httpx.HTTPStatusError("Authentication failed")
-    
+            raise httpx.HTTPStatusError(
+                message="Authentication failed",
+                request=auth_resp.request,
+                response=auth_resp,
+            )
+
         # Authentication succeeded; issue HTTP GET to collect devices
         dev_resp = client.get(f"{api_path}/dataservice/device")
         dev_resp.raise_for_status()

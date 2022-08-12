@@ -54,11 +54,11 @@ def print_response(resp, filedir="resp", filename=None, dump_body=True):
         # Add more options if you want ...
         if "html" in content_type:
             filepath += ".html"
-            with open(filepath, "w") as handle:
+            with open(filepath, "w", encoding="utf-8") as handle:
                 handle.write(resp.text)
         elif "json" in content_type:
             filepath += ".json"
-            with open(filepath, "w") as handle:
+            with open(filepath, "w", encoding="utf-8") as handle:
                 json.dump(resp.json(), handle, indent=2)
 
         print(f"HTTP body written to {filepath}")
@@ -69,7 +69,7 @@ def main():
     Performs a quick test on the print_response() function.
     """
 
-    resp = requests.get("http://njrusmc.net")
+    resp = httpx.get("http://njrusmc.net")
     resp.raise_for_status()
     print_response(resp, filename="get_nick_website")
 

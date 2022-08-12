@@ -1,8 +1,8 @@
 [![Build Status](
-https://travis-ci.com/nickrusso42518/slt-py-requests.svg?branch=master)](
-https://travis-ci.com/nickrusso42518/slt-py-requests)
+https://travis-ci.com/nickrusso42518/slt-py-httpx.svg?branch=master)](
+https://travis-ci.com/nickrusso42518/slt-py-httpx)
 
-# Safari Live Training - Getting Started with Python requests
+# Safari Live Training - Web Service Interaction with Python httpx
 Source code for the training course. Please contact me with any questions.
 Before beginning, be sure you know how to use `git` at a basic level on
 your computer (Windows, Mac OS, or Linux).
@@ -19,48 +19,52 @@ your computer (Windows, Mac OS, or Linux).
 ## Download Instructions
 The easiest way to consume this code is to clone it using SSH or HTTPS.
 
-SSH: `git clone git@github.com:nickrusso42518/slt-py-requests.git`
+SSH: `git clone git@github.com:nickrusso42518/slt-py-httpx.git`
 
 or
 
-HTTPS: `git clone https://github.com/nickrusso42518/slt-py-requests.git`
+HTTPS: `git clone https://github.com/nickrusso42518/slt-py-httpx.git`
 
 After cloning, you should see the following file system structure:
 
 ```
-$ tree
+$ tree --charset=ascii
 .
 |-- Makefile
 |-- README.md
+|-- aio_get_all_pokemon.py
 |-- basic_get.py
 |-- basic_log.py
-|-- cache_control.py
+|-- client_test.py
 |-- data_ref
 |   |-- README.md
-|   |-- cache_control_log.txt
+|   |-- aio_get_all_pokemon_0.json
+|   |-- aio_get_all_pokemon_1000.json
+|   |-- aio_get_all_pokemon_200.json
+|   |-- aio_get_all_pokemon_400.json
+|   |-- aio_get_all_pokemon_600.json
+|   |-- aio_get_all_pokemon_800.json
 |   |-- get_all_pokemon_1.json
 |   |-- get_all_pokemon_2.json
 |   |-- get_all_pokemon_3.json
 |   |-- get_all_pokemon_4.json
 |   |-- get_all_pokemon_5.json
+|   |-- get_all_pokemon_6.json
 |   |-- get_bulbasaur.json
 |   |-- get_cisco_sdwan_devices.json
 |   |-- get_ivysaur.json
 |   |-- get_nick_website.html
+|   |-- get_pokemon.json
 |   |-- get_some_pokemon.json
-|   |-- get_venusaur.json
-|   `-- session_test_log.txt
+|   `-- get_venusaur.json
 |-- get_all_pokemon.py
 |-- get_cisco_sdwan_devices.py
 |-- get_some_pokemon.py
 |-- print_response.py
-|-- redirect_automatic.py
-|-- redirect_manual.py
-|-- requirements.txt
-`-- session_test.py
+`-- requirements.txt
 ```
 
-Ensure you have Python 3.6 or newer installed along with pip.
+Ensure you have Python 3.9 or newer installed along with pip.
 
 > Visit https://www.python.org/downloads/ to download Python.
 
@@ -83,16 +87,14 @@ be no errors.
 ## Usage
 This repository contains several scripts which are detailed in the course.
 Below is a summary of each one:
-  * `basic_get.py`: Trivial script to test Python requests
-  * `basic_log.py`: Trivial script to test Python requests with logging enabled
-  * `cache_control.py`: Use a variety of URLs to test caching options
-  * `session_test.py`: Show the benefits of using a long-lived TCP session
+  * `basic_get.py`: Trivial script to test Python httpx
+  * `basic_log.py`: Trivial script to test Python httpx with logging enabled
+  * `client_test.py`: Show the benefits of using a long-lived TCP session
   * `get_cisco_sdwan_devices.py`: Authenticate to Cisco SD-WAN and get devices
   * `get_some_pokemon.py`: Collect a subset of pokemon and their details
   * `get_all_pokemon.py`: Collect all pokemon using HTTP pagination
+  * `aio_get_all_pokemon.py`: Collect all pokemon using asyncio
   * `print_response.py`: Helper function to quickly print HTTP responses
-  * `redirect_automatic.py`: Automatically follows HTTP redirects
-  * `redirect_manual.py`: Manually follows HTTP redirects
 
 ## Testing
 A GNU Makefile with phony targets is used for testing this codebase.

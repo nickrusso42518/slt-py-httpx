@@ -25,7 +25,7 @@ def main():
     print_response(resp, filename="get_pokemon")
 
     # Optional debugging statement
-    breakpoint()  # py3.7+
+    # breakpoint()  # py3.7+
     # import pdb; pdb.set_trace()  # py3.6-
 
     # Go deeper; get the specific details for each pokemon

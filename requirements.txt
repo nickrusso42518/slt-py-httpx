@@ -1,4 +1,4 @@
-requests
-CacheControl
+httpx
+asyncio
 pylint
 black

@@ -26,7 +26,7 @@ def main(site):
     logger = logging.getLogger()
 
     # Optional debugging statement
-    breakpoint()  # py3.7+
+    # breakpoint()  # py3.7+
     # import pdb; pdb.set_trace()  # py3.6-
 
     # Issue HTTP GET request, check for success, and print body

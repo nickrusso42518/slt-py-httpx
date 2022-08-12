@@ -2,11 +2,11 @@
 
 """
 Author: Nick Russo (njrusmc@gmail.com)
-Purpose: Demonstrate how a long-lived TCP session works with requests.
+Purpose: Demonstrate how a long-lived TCP session works with httpx.
 """
 
 import logging
-import requests
+import httpx
 
 
 def main():
@@ -27,14 +27,15 @@ def main():
 
     # Issue two HTTP GET requests without using a session
     logger.info("Individual, stateless requests")
-    requests.get(url)
-    requests.get(url)
+    httpx.get(url)
+    httpx.get(url)
 
-    # Now use a session; setup occurs only once
-    logger.info("Long-lived, stateful TCP session")
-    sess = requests.session()
-    sess.get(url)
-    sess.get(url)
+    with httpx.Client() as client:
+
+        # Now use a session; setup occurs only once
+        logger.info("Long-lived, stateful TCP session")
+        client.get(url)
+        client.get(url)
 
 
 if __name__ == "__main__":
