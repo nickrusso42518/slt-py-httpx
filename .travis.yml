@@ -1,0 +1,17 @@
+---
+language: "python"
+python:
+  - "3.6"
+
+# Install python packages for ansible and linters.
+install:
+  - "make setup"
+
+# Perform pre-checks
+before_script:
+  - "make lint"
+
+# Perform runbook testing with mock ASA inputs.
+script:
+  - "make run"
+...

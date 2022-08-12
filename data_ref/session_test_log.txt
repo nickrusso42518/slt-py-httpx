@@ -1,0 +1,9 @@
+2020-05-21 08:07:02 INFO     Individual, stateless requests
+2020-05-21 08:07:02 DEBUG    Starting new HTTP connection (1): njrusmc.net:80
+2020-05-21 08:07:03 DEBUG    http://njrusmc.net:80 "GET / HTTP/1.1" 200 1796
+2020-05-21 08:07:03 DEBUG    Starting new HTTP connection (1): njrusmc.net:80
+2020-05-21 08:07:03 DEBUG    http://njrusmc.net:80 "GET / HTTP/1.1" 200 1796
+2020-05-21 08:07:03 INFO     Long-lived, stateful TCP session
+2020-05-21 08:07:03 DEBUG    Starting new HTTP connection (1): njrusmc.net:80
+2020-05-21 08:07:03 DEBUG    http://njrusmc.net:80 "GET / HTTP/1.1" 200 1796
+2020-05-21 08:07:03 DEBUG    http://njrusmc.net:80 "GET / HTTP/1.1" 200 1796

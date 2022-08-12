@@ -1,0 +1,93 @@
+2020-05-21 07:43:13 INFO     First GET to http://njrusmc.net/jobaid/mpls_pcap.zip
+2020-05-21 07:43:13 DEBUG    Looking up "http://njrusmc.net/jobaid/mpls_pcap.zip" in the cache
+2020-05-21 07:43:13 DEBUG    No cache entry available
+2020-05-21 07:43:13 DEBUG    Starting new HTTP connection (1): njrusmc.net:80
+2020-05-21 07:43:13 DEBUG    http://njrusmc.net:80 "GET /jobaid/mpls_pcap.zip HTTP/1.1" 200 35577
+2020-05-21 07:43:13 DEBUG    Updating cache with response from "http://njrusmc.net/jobaid/mpls_pcap.zip"
+2020-05-21 07:43:13 DEBUG    Caching due to etag
+
+GET http://njrusmc.net/jobaid/mpls_pcap.zip
+---------------------------------------------
+Result: 200/OK
+Elapsed time: 94229 us
+HTTP headers:
+  - x-amz-id-2: rkumPx5pbachG5RP366iX4VzGlRDyNwIzd84L92t8XR1FJZlTe2qzu6PADRkMxZm1no/BmBH0rY=
+  - x-amz-request-id: 69E3DEC885A44307
+  - Date: Thu, 21 May 2020 11:43:14 GMT
+  - Cache-Control: public, max-age=300
+  - Last-Modified: Thu, 21 May 2020 11:42:47 GMT
+  - ETag: "2052bec7c731c5bd41fae765492a13ec"
+  - Content-Type: application/octet-stream
+  - Content-Length: 35577
+  - Server: AmazonS3
+HTTP redirect count: 0
+
+2020-05-21 07:43:15 INFO     Second GET to http://njrusmc.net/jobaid/mpls_pcap.zip
+2020-05-21 07:43:15 DEBUG    Looking up "http://njrusmc.net/jobaid/mpls_pcap.zip" in the cache
+2020-05-21 07:43:15 DEBUG    Current age based on date: 1
+2020-05-21 07:43:15 DEBUG    Freshness lifetime from max-age: 300
+2020-05-21 07:43:15 DEBUG    The response is "fresh", returning cached response
+2020-05-21 07:43:15 DEBUG    300 > 1
+
+GET http://njrusmc.net/jobaid/mpls_pcap.zip
+---------------------------------------------
+Result: 200/OK
+Elapsed time: 1409 us
+HTTP headers:
+  - x-amz-id-2: rkumPx5pbachG5RP366iX4VzGlRDyNwIzd84L92t8XR1FJZlTe2qzu6PADRkMxZm1no/BmBH0rY=
+  - x-amz-request-id: 69E3DEC885A44307
+  - Date: Thu, 21 May 2020 11:43:14 GMT
+  - Cache-Control: public, max-age=300
+  - Last-Modified: Thu, 21 May 2020 11:42:47 GMT
+  - ETag: "2052bec7c731c5bd41fae765492a13ec"
+  - Content-Type: application/octet-stream
+  - Content-Length: 35577
+  - Server: AmazonS3
+HTTP redirect count: 0
+
+2020-05-21 07:43:15 INFO     First GET to http://njrusmc.net/jobaid/ipsec_pcap.zip
+2020-05-21 07:43:15 DEBUG    Looking up "http://njrusmc.net/jobaid/ipsec_pcap.zip" in the cache
+2020-05-21 07:43:15 DEBUG    No cache entry available
+2020-05-21 07:43:15 DEBUG    Starting new HTTP connection (1): njrusmc.net:80
+2020-05-21 07:43:15 DEBUG    http://njrusmc.net:80 "GET /jobaid/ipsec_pcap.zip HTTP/1.1" 200 40877
+2020-05-21 07:43:15 DEBUG    Updating cache with response from "http://njrusmc.net/jobaid/ipsec_pcap.zip"
+2020-05-21 07:43:15 DEBUG    Response header has "no-store"
+
+GET http://njrusmc.net/jobaid/ipsec_pcap.zip
+----------------------------------------------
+Result: 200/OK
+Elapsed time: 58242 us
+HTTP headers:
+  - x-amz-id-2: xAFaBPHEAfJ/iRLZc1K+YLX3pG7lKcNgE4AxWjpW8RJBItqq7/PeA6dbEYQLDoygjAyOHI+mf6U=
+  - x-amz-request-id: 3A883CCCE6DB01C9
+  - Date: Thu, 21 May 2020 11:43:16 GMT
+  - Cache-Control: no-store
+  - Last-Modified: Thu, 21 May 2020 11:35:39 GMT
+  - ETag: "b0a5b22aa583411fc7353f8cda052b50"
+  - Content-Type: application/octet-stream
+  - Content-Length: 40877
+  - Server: AmazonS3
+HTTP redirect count: 0
+
+2020-05-21 07:43:17 INFO     Second GET to http://njrusmc.net/jobaid/ipsec_pcap.zip
+2020-05-21 07:43:17 DEBUG    Looking up "http://njrusmc.net/jobaid/ipsec_pcap.zip" in the cache
+2020-05-21 07:43:17 DEBUG    No cache entry available
+2020-05-21 07:43:17 DEBUG    http://njrusmc.net:80 "GET /jobaid/ipsec_pcap.zip HTTP/1.1" 200 40877
+2020-05-21 07:43:17 DEBUG    Updating cache with response from "http://njrusmc.net/jobaid/ipsec_pcap.zip"
+2020-05-21 07:43:17 DEBUG    Response header has "no-store"
+
+GET http://njrusmc.net/jobaid/ipsec_pcap.zip
+----------------------------------------------
+Result: 200/OK
+Elapsed time: 30010 us
+HTTP headers:
+  - x-amz-id-2: nd09Mo3t0lA/xXZkqonQUijmWWycEqYVkXAAP7pd90yuzc2wHmSJF4mpKP5TCzDFlz9WUuPQXxo=
+  - x-amz-request-id: DB2091B2D6B6F2D8
+  - Date: Thu, 21 May 2020 11:43:18 GMT
+  - Cache-Control: no-store
+  - Last-Modified: Thu, 21 May 2020 11:35:39 GMT
+  - ETag: "b0a5b22aa583411fc7353f8cda052b50"
+  - Content-Type: application/octet-stream
+  - Content-Length: 40877
+  - Server: AmazonS3
+HTTP redirect count: 0
