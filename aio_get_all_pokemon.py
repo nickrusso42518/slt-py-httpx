@@ -8,6 +8,7 @@ Documentation available at https://pokeapi.co/docs/v2.html
 """
 
 import asyncio
+from math import ceil
 import httpx
 from print_response import print_response
 
@@ -32,19 +33,16 @@ async def get_batch(params):
         while True:
 
             # Send asyncio-style GET request using query params
-            resp = await client.get(
-                url=URL, headers=HEADERS, params=params, timeout=2
-            )
+            resp = await client.get(url=URL, headers=HEADERS, params=params)
 
-            # The only correct answer; break loop upon success and write data
-            if resp.status_code == 200:
-                print_response(
-                    resp, filename=f"aio_get_all_pokemon_{params['offset']}"
-                )
+            # 200 is the only correct answer; write data and break loop
+            if resp.status_code == httpx.codes.OK:
+                filename = f"aio_get_all_pokemon_{params['offset']}"
+                print_response(resp, filename=filename)
                 break
 
             # Handle failures: 429 means retry, otherwise raise error
-            if resp.status_code == 429:
+            if resp.status_code == httpx.codes.TOO_MANY_REQUESTS:
                 await asyncio.sleep(3)
 
             # Some other error occurred, which is a true failure. Stop trying
@@ -53,21 +51,26 @@ async def get_batch(params):
                 break
 
 
-def main():
+async def main():
     """
-    Execution starts here.
+    Execution starts here (coroutine).
     """
 
-    # Build list of async tasks used a list comprehension
-    tasks = [get_batch({"limit": QTY, "offset": i * QTY}) for i in range(6)]
+    # Determine batch count by collecting a minimal amount of information,
+    # then accessing the total count. Perform ceiling division to round up
+    resp = httpx.get(URL, headers=HEADERS, params={"limit": 1})
+    b_cnt = ceil(resp.json()["count"] / QTY)
 
-    # Define a future to run the tasks
+    # Build list of async tasks using a list comprehension
+    # Calling a coroutine, such as get_batch(), returns a task object!
+    tasks = [get_batch({"limit": QTY, "offset": i * QTY}) for i in range(b_cnt)]
+
+    # Encapsulate all tasks in a future, then await concurrent completion
     task_future = asyncio.gather(*tasks)
+    await task_future
 
-    # Run the future until all contained tasks are complete
-    asyncio.get_event_loop().run_until_complete(task_future)
     print("\nCOLLECTION COMPLETE")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
