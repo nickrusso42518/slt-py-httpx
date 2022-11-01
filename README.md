@@ -1,6 +1,6 @@
 [![Build Status](
-https://travis-ci.com/nickrusso42518/slt-py-httpx.svg?branch=master)](
-https://travis-ci.com/nickrusso42518/slt-py-httpx)
+https://app.travis-ci.com/nickrusso42518/slt-py-httpx.svg?branch=master)](
+https://app.travis-ci.com/nickrusso42518/slt-py-httpx)
 
 # Safari Live Training - Web Service Interaction with Python httpx
 Source code for the training course. Please contact me with any questions.
