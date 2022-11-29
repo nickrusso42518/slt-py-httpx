@@ -18,7 +18,7 @@ def main(site):
     resp = httpx.get(site)
 
     # If "is_success", do nothing. Else, raise httpx.HTTPStatusError
-    # Code: ~/environments/pyhttpx/lib/python3.10/site-packages/httpx/_models.py
+    # L710: ~/environments/pyhttpx/lib/python3.10/site-packages/httpx/_models.py
     resp.raise_for_status()
     print(resp.text)
 

@@ -17,7 +17,6 @@ def main():
 
     # Define base URL and disable SSL warnings (self-signed cert)
     api_path = "https://sandbox-sdwan-1.cisco.com"
-    # requests.packages.urllib3.disable_warnings()
 
     # These credentials are supplied by Cisco DevNet on the sandbox page:
     # https://developer.cisco.com/sdwan/learn/
@@ -27,7 +26,6 @@ def main():
     # into key/value pairs. Also, disable SSL validation
     with httpx.Client(verify=False) as client:
         auth_resp = client.post(f"{api_path}/j_security_check", data=creds)
-        # auth = sess.post(f"{api_path}/j_security_check", data=creds, verify=False)
 
         # Optional debugging statement
         # breakpoint()  # py3.7+
