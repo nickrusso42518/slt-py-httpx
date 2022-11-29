@@ -9,6 +9,9 @@ public Cisco DevNet sandbox.
 import httpx
 from print_response import print_response
 
+# Request timeout (default is 5 seconds and sometimes fails)
+TIMEOUT = 20
+
 
 def main():
     """
@@ -25,7 +28,9 @@ def main():
     # Open "client" session and issue POST request. "data" will unpack the dict
     # into key/value pairs. Also, disable SSL validation
     with httpx.Client(verify=False) as client:
-        auth_resp = client.post(f"{api_path}/j_security_check", data=creds)
+        auth_resp = client.post(
+            f"{api_path}/j_security_check", data=creds, timeout=TIMEOUT
+        )
 
         # Optional debugging statement
         # breakpoint()  # py3.7+
@@ -43,7 +48,7 @@ def main():
             )
 
         # Authentication succeeded; issue HTTP GET to collect devices
-        dev_resp = client.get(f"{api_path}/dataservice/device")
+        dev_resp = client.get(f"{api_path}/dataservice/device", timeout=TIMEOUT)
         dev_resp.raise_for_status()
         print_response(dev_resp, filename="get_cisco_sdwan_devices")
 
