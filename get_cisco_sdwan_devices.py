@@ -19,7 +19,8 @@ def main():
     """
 
     # Define base URL and disable SSL warnings (self-signed cert)
-    api_path = "https://sandbox-sdwan-1.cisco.com"
+    # api_path = "https://sandbox-sdwan-1.cisco.com"
+    api_path = "https://sandbox-sdwan-2.cisco.com"
 
     # These credentials are supplied by Cisco DevNet on the sandbox page:
     # https://developer.cisco.com/sdwan/learn/

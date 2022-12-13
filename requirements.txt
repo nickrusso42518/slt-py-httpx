@@ -1,4 +1,3 @@
 httpx
-asyncio
 pylint
 black
