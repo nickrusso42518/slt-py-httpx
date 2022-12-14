@@ -18,7 +18,7 @@ def main():
     Execution begins here.
     """
 
-    # Define base URL and disable SSL warnings (self-signed cert)
+    # Define base URL for preferred sandbox
     # api_path = "https://sandbox-sdwan-1.cisco.com"
     api_path = "https://sandbox-sdwan-2.cisco.com"
 
