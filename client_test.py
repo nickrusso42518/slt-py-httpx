@@ -23,7 +23,7 @@ def main():
     logger = logging.getLogger()
 
     # Define generic URL to test
-    url = "http://njrusmc.net"
+    url = "https://njrusmc.net"
 
     # Issue two HTTP GET requests without using a session
     logger.info("Individual, stateless requests")

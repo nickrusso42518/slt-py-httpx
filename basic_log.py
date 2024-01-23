@@ -48,4 +48,4 @@ if __name__ == "__main__":
 
     # Insufficient CLI args supplied; use author's homepage by default
     else:
-        main("http://njrusmc.net")
+        main("https://njrusmc.net")

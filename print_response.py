@@ -69,7 +69,7 @@ def main():
     Performs a quick test on the print_response() function.
     """
 
-    resp = httpx.get("http://njrusmc.net")
+    resp = httpx.get("https://njrusmc.net")
     resp.raise_for_status()
     print_response(resp, filename="get_nick_website")
 
