@@ -31,7 +31,6 @@ def main():
     httpx.get(url)
 
     with httpx.Client() as client:
-
         # Now use a session; setup occurs only once
         logger.info("Long-lived, stateful TCP session")
         client.get(url)

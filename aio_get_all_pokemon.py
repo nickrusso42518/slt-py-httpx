@@ -28,10 +28,8 @@ async def get_batch(params):
 
     # Create an async client context manager
     async with httpx.AsyncClient() as client:
-
         # Loop forever (ie, keep trying to get the info)
         while True:
-
             # Send asyncio-style GET request using query params
             resp = await client.get(url=URL, headers=HEADERS, params=params)
 

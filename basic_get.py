@@ -24,7 +24,6 @@ def main(site):
 
 
 if __name__ == "__main__":
-
     # Ensure there are at least 2 arguments; extract the
     # second one (first one after the script name)
     if len(sys.argv) >= 2:
