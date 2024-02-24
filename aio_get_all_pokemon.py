@@ -59,13 +59,13 @@ async def main():
     resp = httpx.get(URL, headers=HEADERS, params={"limit": 1})
     b_cnt = ceil(resp.json()["count"] / QTY)
 
-    # Build list of async tasks using a list comprehension
-    # Calling a coroutine, such as get_batch(), returns a task object!
-    tasks = [get_batch({"limit": QTY, "offset": i * QTY}) for i in range(b_cnt)]
+    # Instantiate coroutines into objects using a list comprehension
+    # Calling a coroutine, such as get_batch(), returns a coroutine object!
+    coros = [get_batch({"limit": QTY, "offset": i * QTY}) for i in range(b_cnt)]
 
-    # Encapsulate all tasks in a future, then await concurrent completion
-    task_future = asyncio.gather(*tasks)
-    await task_future
+    # Encapsulate all coros in a future, then await concurrent completion
+    coro_future = asyncio.gather(*coros)
+    await coro_future
 
     print("\nCOLLECTION COMPLETE")
 
